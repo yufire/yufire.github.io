@@ -1,15 +1,17 @@
-import { defineUserConfig } from "vuepress";
+import {defineUserConfig} from "vuepress";
+import {autoCatalogPlugin} from "vuepress-plugin-auto-catalog";
+
 import theme from "./theme.js";
 
-export default defineUserConfig({
-  base: "/",
-
-  lang: "zh-CN",
-  title: "博客演示",
-  description: "vuepress-theme-hope 的博客演示",
-
-  theme,
-
-  // Enable it with pwa
-  // shouldPrefetch: false,
-});
+export default {
+    plugins: [
+        autoCatalogPlugin({
+            //插件选项
+        }),
+    ],
+    base: "/",
+    lang: "zh-CN",
+    title: "YufireDe-Blog",
+    description: "vuepress-theme-hope 的博客演示",
+    theme,
+}
